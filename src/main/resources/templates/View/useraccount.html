@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Thông tin tài khoản</title>
+    <link rel="stylesheet" href="/templates/Css/useraccount.css">
+    <script src="/templates/Js/useraccount.js" defer></script>
+</head>
+<body>
+<div class="account-container">
+    <h2>👤 Thông tin tài khoản</h2>
+    <table class="account-table">
+        <thead>
+        <tr>
+            <th>Gmail</th>
+            <th>Họ Tên</th>
+            <th>Mật khẩu</th>
+            <th>Hành động</th>
+        </tr>
+        </thead>
+        <tbody id="userTableBody">
+        </tbody>
+    </table>
+
+    <h3>Cập nhật thông tin</h3>
+    <form id="accountForm" style="display: none;">
+        <label>Email:</label>
+        <input type="email" id="email" required>
+
+        <label>Tên người dùng:</label>
+        <input type="text" id="username" required>
+
+        <label>Mật khẩu:</label>
+        <input type="text" id="password" required>
+
+        <button type="submit">💾 Cập nhật</button>
+    </form>
+    <button class="btn-back" onclick="goBack()">🔙 Quay lại</button>
+</div>
+</body>
+<script>
+    function goBack() {
+        const ref = document.referrer;
+
+        if (ref.includes("AdminHome.html")) {
+            window.location.href = "AdminHome.html";
+        } else if (ref.includes("AccountantHome.html")) {
+            window.location.href = "AccountantHome.html";
+        } else if (ref.includes("ManagerHome.html")) {
+            window.location.href = "ManagerHome.html";
+        } else if (ref.includes("HRHome.html")) {
+            window.location.href = "HRHome.html";
+        } else if (ref.includes("EmployeeHome.html")) {
+            window.location.href = "EmployeeHome.html";
+        } else {
+            window.location.href = "login and register.html";
+        }
+    }
+</script>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contract</title>
+    <link rel="stylesheet" href="/templates/Css/Contract.css">
+    <script src="/templates/Js/Contract.js" defer></script>
+</head>
+<body>
+
+<div class="container">
+    <h1>Hợp đồng </h1>
+
+    <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Tìm kiếm bằng ID " />
+        <button onclick="searchContract()">🔍 Tìm kiếm</button>
+        <button onclick="loadContracts()">🔄 Reset</button>
+        <button onclick="showForm()">➕ Thêm </button>
+        <button class="btn-back" onclick="goBack()">🔙 Quay lại</button>
+    </div>
+    <table id="contractTable">
+        <thead>
+        <tr>
+            <th>ID Hợp đồng</th>
+            <th>ID Nhân viển</th>
+            <th>Họ và tên</th>
+            <th>Loại hợp đồng</th>
+            <th>Ngày kết thúc</th>
+            <th>Ngày bắt đầu</th>
+            <th>Lương</th>
+            <th>Chức năng</th>
+        </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    </div>
+<div id="formContainer" class="form-container hidden">
+    <h2 id="formTitle">Thêm Hợp đồng</h2>
+    <form id="contractForm" onsubmit="submitForm(event)">
+        <input type="hidden" id="contractId" />
+
+        <div class="form-group">
+            <label for="employeeId">ID Nhân viên:</label>
+            <input type="number" id="employeeId" required />
+        </div>
+
+        <div class="form-group">
+            <label for="contractType">Loại hợp đồng:</label>
+            <input type="text" id="contractType" required />
+        </div>
+
+        <div class="form-group">
+            <label for="salary">Lương:</label>
+            <input type="number" id="salary" required />
+        </div>
+
+        <div class="form-group">
+            <label for="startDate">Ngày bắt đầu:</label>
+            <input type="date" id="startDate" required />
+        </div>
+
+        <div class="form-group">
+            <label for="endDate">Ngày kết thúc:</label>
+            <input type="date" id="endDate" />
+        </div>
+
+        <div class="form-actions">
+            <button type="submit">💾 Lưu</button>
+            <button type="button" onclick="hideForm()">❌ Hủy</button>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>

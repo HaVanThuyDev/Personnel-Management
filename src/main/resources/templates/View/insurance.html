@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Quản lý Bảo hiểm</title>
+    <link rel="stylesheet" href="/templates/Css/insurance.css">
+    <script src="/templates/Js/insurance.js" defer></script>
+</head>
+<body>
+
+<h1>Quản lý Bảo hiểm</h1>
+
+<button id="btnAddNew">➕ Thêm</button>
+<button class="btn-back" onclick="goBack()">🔙 Quay lại</button>
+<form id="insuranceForm">
+    <input type="hidden" id="insuranceId">
+
+    <label for="employeeId">ID Nhân viên:</label>
+    <input type="text" id="employeeId" required>
+
+    <label for="employeeName">Tên nhân viên:</label>
+    <input type="text" id="employeeName" readonly>
+
+    <label for="departmentName">Phòng ban:</label>
+    <input type="text" id="departmentName" readonly>
+
+    <label for="type">Loại bảo hiểm:</label>
+    <input type="text" id="type" required>
+
+    <label for="amount">Giá trị bảo hiểm:</label>
+    <input type="text" id="amount" required>
+
+    <label for="startDate">Ngày bắt đầu:</label>
+    <input type="date" id="startDate" required>
+
+    <label for="endDate">Ngày kết thúc:</label>
+    <input type="date" id="endDate" required>
+
+    <div class="form-buttons">
+        <button type="submit">💾 Lưu</button>
+        <button type="button" id="cancelButton">❌ Hủy</button>
+    </div>
+</form>
+
+<table>
+    <thead>
+    <tr>
+        <th>ID Bảo hiểm</th>
+        <th>Tên nhân viên</th>
+        <th>Phòng ban</th>
+        <th>Loại bảo hiểm</th>
+        <th>Giá trị</th>
+        <th>Ngày bắt đầu</th>
+        <th>Ngày kết thúc</th>
+        <th>Hành động</th>
+    </tr>
+    </thead>
+    <tbody id="insuranceTableBody"></tbody>
+</table>
+
+<button id="btnExport" class="btn-export">📁 Xuất Excel</button>
+<script>
+    function goBack() {
+        const ref = document.referrer;
+
+        if (ref.includes("AdminHome.html")) {
+            window.location.href = "AdminHome.html";
+        } else if (ref.includes("HRHome.html")) {
+            window.location.href = "HRHome.html";
+        } else {
+            window.location.href = "login and register.html";
+        }
+    }
+</script>
+</body>
+</html>

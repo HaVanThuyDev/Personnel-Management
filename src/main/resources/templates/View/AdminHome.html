@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="/templates/Css/HomeHR.css">
+    <script src="/templates/Js/certificate.js"></script>
+    <script src="/templates/Js/Showusers.js"></script>
+
+</head>
+<body>
+<section id="sidebar">
+    <ul class="side-menu top">
+        <li class="active">
+            <a href="">
+                <i class='bx bxs-home'></i>
+                <span class="text">Home</span>
+            </a>
+        </li>
+        <li>
+            <a href="account.html">
+                <i class='bx bxs-group'></i>
+                <span class="text">Tài Khoản</span>
+            </a>
+        </li>
+        <li>
+            <a href="staff.html">
+                <i class='bx bxs-user'></i>
+                <span class="text">Nhân Viên</span>
+            </a>
+        </li>
+
+        <li>
+            <a href="departments.html">
+                <i class='bx bxs-buildings'></i>
+                <span class="text">Phòng ban</span>
+            </a>
+        </li>
+        <li>
+            <a href="Contract.html">
+                <i class='bx bxs-file'></i>
+                <span class="text">Hợp Đồng</span>
+            </a>
+        </li>
+        <li>
+            <a href="insurance.html">
+                <i class='bx bxs-shield'></i>
+                <span class="text">Bảo Hiểm</span>
+            </a>
+        </li>
+        <li>
+            <a href="statistic.html">
+                <i class='bx bxs-bar-chart-alt-2'></i>
+                <span class="text">Thống kê</span>
+            </a>
+        </li>
+
+        <li>
+            <a href="Payroll.html">
+                <i class='bx bxs-dollar-circle'></i>
+                <span class="text"> lương</span>
+            </a>
+        </li>
+    </ul>
+    <ul class="side-menu">
+        <li>
+            <a href="#">
+                <i class='bx bxs-cog' ></i>
+                <span class="text">Cài đặt</span>
+            </a>
+        </li>
+        <li>
+            <a href="login and register.html" class="logout">
+                <i class='bx bxs-log-out-circle'></i>
+                <span class="text">Thoát</span>
+            </a>
+        </li>
+    </ul>
+</section>
+<section id="content">
+    <nav>
+        <i class='bx bx-menu' ></i>
+        <a href="" class="nav-link">Tìm kiếm</a>
+        <form action="#">
+            <div class="form-input">
+                <input type="search" placeholder="Search...">
+                <button type="submit" class="search-btn"><i class='bx bx-search' ></i></button>
+            </div>
+        </form>
+        <input type="checkbox" id="switch-mode" hidden>
+        <label for="switch-mode" class="switch-mode"></label>
+
+        <a href="#" class="profile">
+            <img src="https://tse1.mm.bing.net/th?id=OIP.zZI6Et1qQpNuXLXiuwwDsAHaHa&pid=Api&P=0&h=180">
+        </a>
+    </nav>
+    <main>
+        <ul class="box-info">
+            <li>
+                <i class='bx bxs-calendar-check' ></i>
+                <span class="text">
+						<h3>1020</h3>
+						<p>Đơn hàng</p>
+					</span>
+            </li>
+            <li>
+                <i class='bx bxs-group' ></i>
+                <span class="text">
+						<h3>2834</h3>
+						<p>Nhân viên</p>
+					</span>
+            </li>
+            <li>
+                <i class='bx bxs-dollar-circle' ></i>
+                <span class="text">
+						<h3>$2543</h3>
+						<p>Doanh thu</p>
+					</span>
+            </li>
+        </ul>
+        <div class="table-data">
+            <div class="order">
+                <div class="head">
+                    <h3>Thông tin</h3>
+                    <i class='bx bx-search' ></i>
+                    <i class='bx bx-filter' ></i>
+                </div>
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Tài khoản</th>
+                        <th>Ngày sinh</th>
+                        <th>Trạng thái</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>
+                            <img src="https://png.pngtree.com/thumb_back/fh260/background/20221029/pngtree-employee-account-leader-job-photo-image_39957664.jpg">
+                            <p>Admin</p>
+                        </td>
+                        <td>01-10-2021</td>
+                        <td><span class="status completed">Completed</span></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZFU3jHx18hFvD4dM4HCAK9O0yRInzFqPPnA&s">
+                            <p>Manager</p>
+                        </td>
+                        <td>01-10-2021</td>
+                        <td><span class="status pending">Pending</span></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="https://img.pikbest.com/png-images/qiantu/cartoon-image-of-white-collar-workers-in-the-office_2714914.png!sw800">
+                            <p>Hr</p>
+                        </td>
+                        <td>01-10-2021</td>
+                        <td><span class="status process">Process</span></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="https://vietluanvan.net/wp-content/uploads/2024/12/1-65.png">
+                            <p> Accountant</p>
+                        </td>
+                        <td>01-10-2021</td>
+                        <td><span class="status pending">Pending</span></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="https://img.lovepik.com/free-png/20211214/lovepik-business-female-staff-png-image_401598557_wh1200.png">
+                            <p>Employees</p>
+                        </td>
+                        <td>01-10-2021</td>
+                        <td><span class="status completed">Completed</span></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="stock-chart-container">
+                <canvas id="stockChart" height="160"></canvas>
+                <canvas id="stockBarChart" height="160"></canvas>
+            </div>
+
+
+        </div>
+    </main>
+</section>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const username = localStorage.getItem("username");
+        const usernameDisplay = document.getElementById("username-display");
+
+        if (username && usernameDisplay) {
+            usernameDisplay.textContent = username;
+        } else {
+            usernameDisplay.textContent = "Người dùng";
+        }
+    });
+</script>
+</body>
+</html>

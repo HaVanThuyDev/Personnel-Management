@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Quản lý tài khoản</title>
+    <link rel="stylesheet" href="/templates/Css/account.css">
+    <script src="/templates/Js/Account.js"></script>
+</head>
+<body>
+<h1>Tài khoản</h1>
+<button class="btn-back" onclick="goBack()">Quay lại</button>
+<input type="text" id="searchInput" placeholder="Tìm kiếm theo tên hoặc email...">
+<table id="userTable">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Gmail</th>
+        <th>Tên tài khoản</th>
+        <th>Mật khẩu</th>
+        <th>Vai trò</th>
+        <th>Trạng thái</th>
+        <th>Chức năng</th>
+    </tr>
+    </thead>
+
+    <tbody></tbody>
+</table>
+<div id="editFormContainer" class="modal hidden">
+    <div class="modal-content">
+        <h3>Cập nhật quyền người dùng</h3>
+        <form id="editUserForm">
+            <input type="hidden" id="editId">
+
+            <label>Email:</label>
+            <input type="email" id="editEmail" disabled><br>
+
+            <label>Username:</label>
+            <input type="text" id="editUsername" disabled><br>
+
+            <label>Password:</label>
+            <input type="text" id="editPassword" disabled><br>
+
+            <label>Role:</label>
+            <select id="editRole">
+                <option>ADMIN</option>
+                <option>HR</option>
+                <option>MANAGER</option>
+                <option>EMPLOYEE</option>
+                <option>ACCOUNTANT</option>
+            </select><br>
+            <label>Trạng thái tài khoản:</label>
+            <select id="editStatus">
+                <option value="ACTIVE">ACTIVE</option>
+                <option value="INACTIVE">INACTIVE</option>
+            </select><br>
+
+            <button type="submit">Lưu</button>
+            <button type="button" onclick="closeForm()">Huỷ</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>

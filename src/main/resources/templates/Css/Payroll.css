@@ -1,0 +1,433 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+}
+
+body {
+    background: linear-gradient(120deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 80%;
+    margin: 40px auto;
+    padding: 32px 36px 40px 36px;
+    border-radius: 22px;
+    background: #fff;
+    box-shadow: 0 8px 32px rgba(60,60,120,0.1), 0 1.5px 5px rgba(60,60,120,0.07);
+}
+
+h1 {
+    text-align: center;
+    color: #273c75;
+    margin-bottom: 32px;
+    font-size: 2.4rem;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+
+/* ACTION BUTTON GROUP - Xuất, Thêm mới, Quay lại */
+.action-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: flex-end;
+    margin-bottom: 22px;
+}
+.btn-excel, .btn-add, .btn-back {
+    padding: 7px 18px;
+    border: none;
+    border-radius: 22px;
+    font-size: 0.97rem;
+    font-weight: 600;
+    cursor: pointer;
+    min-width: 95px;
+    min-height: 35px;
+    transition: background 0.18s, color 0.16s, box-shadow 0.17s, transform 0.13s;
+    box-shadow: 0 1.5px 7px 0 rgba(0, 206, 209, 0.09);
+}
+.btn-excel {
+    background: linear-gradient(90deg, #6c63ff 60%, #00b894 100%);
+    color: #fff;
+}
+.btn-add {
+    background: linear-gradient(90deg, #00b894, #00cec9);
+    color: #fff;
+}
+.btn-back {
+    background: linear-gradient(90deg, #ffe259 50%, #ffa751 100%);
+    color: #2d3436;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.btn-excel:hover, .btn-add:hover {
+    filter: brightness(1.12);
+    box-shadow: 0 3px 14px 0 rgba(9, 132, 227, 0.17);
+    transform: translateY(-2px) scale(1.029);
+}
+.btn-back:hover {
+    filter: brightness(1.08);
+    box-shadow: 0 5px 16px 0 rgba(255, 226, 89, 0.13);
+    transform: translateY(-1px) scale(1.035);
+}
+
+/* SEARCH BAR BEAUTY */
+.search {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.search-bar {
+    display: flex;
+    align-items: stretch;
+    width: 70%;
+    min-width: 230px;
+    max-width: 900px;
+    border-radius: 30px;
+    background: #f4f8fb;
+    box-shadow: 0 2px 12px rgba(0,184,148,0.07);
+    overflow: hidden;
+    border: 1.5px solid #dcdde1;
+    transition: box-shadow 0.18s, border 0.2s;
+    position: relative;
+}
+.search-bar:focus-within {
+    border: 1.5px solid #00b894;
+    box-shadow: 0 2px 18px rgba(0,184,148,0.12);
+}
+.search-bar input[type="text"] {
+    flex: 1;
+    padding: 13px 18px;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 1.09rem;
+    color: #222f3e;
+    border-radius: 0;
+    transition: background 0.2s;
+}
+.search-bar input[type="text"]:focus {
+    background: #eafaf1;
+}
+.search-bar button {
+    min-width: 100px;
+    background: linear-gradient(90deg, #0984e3, #00b894);
+    color: #fff;
+    font-weight: 600;
+    border: none;
+    border-radius: 0 30px 30px 0;
+    cursor: pointer;
+    font-size: 1rem;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: background 0.18s, box-shadow 0.18s, transform 0.13s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.search-bar button::before {
+    content: "";
+    position: absolute;
+    left: -75%;
+    top: 0;
+    width: 75%;
+    height: 100%;
+    background: linear-gradient(90deg, #00b894 30%, #0984e3 100%);
+    z-index: 0;
+    transition: left 0.35s cubic-bezier(.4,0,.2,1);
+}
+.search-bar button:hover::before {
+    left: 0;
+}
+.search-bar button span {
+    position: relative;
+    z-index: 2;
+    transition: color 0.18s;
+}
+.search-bar button:hover {
+    color: #fff;
+    transform: scale(1.04);
+    box-shadow: 0 3px 14px 0 rgba(9, 132, 227, 0.09);
+}
+
+/* PAYROLL TABLE */
+#payrollTable {
+    width: 100%;
+    margin-top: 22px;
+    border-collapse: collapse;
+    box-shadow: 0 2px 16px 0 rgba(44,62,80,0.06);
+    background: #fdfdfd;
+    border-radius: 14px;
+    overflow: hidden;
+}
+#payrollTable th, #payrollTable td {
+    padding: 11px 8px;
+    text-align: center;
+}
+#payrollTable thead {
+    background: linear-gradient(90deg, #00b894, #0984e3);
+    color: white;
+    font-size: 1.03rem;
+    font-weight: 600;
+}
+#payrollTable tbody tr {
+    transition: background 0.18s;
+}
+#payrollTable tbody tr:hover {
+    background: #f1f2f6;
+}
+#payrollTable td {
+    color: #34495e;
+    font-size: 0.98rem;
+}
+#payrollTable td:last-child {
+    min-width: 120px;
+}
+#payrollTable .btn-table {
+    margin: 0 2px;
+    min-width: 55px;
+    padding: 5px 10px;
+    background: linear-gradient(90deg, #00b894 80%, #00cec9 100%);
+    color: #fff;
+    border-radius: 15px;
+    font-size: 0.93rem;
+    font-weight: 500;
+    border: none;
+    transition: background 0.18s, box-shadow 0.18s, transform 0.13s;
+}
+#payrollTable .btn-table:hover {
+    background: linear-gradient(90deg, #0984e3 80%, #00b894 100%);
+    color: #fff;
+    filter: brightness(1.09);
+    box-shadow: 0 3px 14px 0 rgba(9, 132, 227, 0.13);
+    transform: translateY(-1.5px) scale(1.02);
+}
+
+/* FORM STYLES */
+#payrollForm {
+    margin: 38px auto 0 auto;
+    max-width: 550px;
+    padding: 24px 20px 20px 20px;
+    background: #f4f7fa;
+    border-radius: 18px;
+    box-shadow: 0 2px 16px 0 rgba(44,62,80,0.07);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: stretch;
+}
+#payrollForm h3 {
+    color: #2980b9;
+    text-align: center;
+    margin-bottom: 8px;
+    font-size: 1.13rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+#payrollForm input[type="text"],
+#payrollForm input[type="number"] {
+    margin-bottom: 6px;
+    width: 100%;
+    padding: 8px 13px;
+    border: 1.5px solid #dcdde1;
+    border-radius: 8px;
+    outline: none;
+    font-size: 0.95rem;
+    background: #f4f8fb;
+    color: #222f3e;
+    transition: border 0.2s;
+}
+#payrollForm input[type="text"]:focus, #payrollForm input[type="number"]:focus {
+    border: 1.5px solid #00b894;
+    background: #eafaf1;
+}
+#payrollForm #saveBtn,
+#payrollForm #cancelBtn {
+    border-radius: 20px;
+    font-size: 0.97rem;
+    font-weight: 600;
+    padding: 8px 0;
+    margin-top: 6px;
+    min-width: 80px;
+    min-height: 32px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.18s, box-shadow 0.18s, transform 0.13s;
+}
+#payrollForm #saveBtn {
+    background: linear-gradient(90deg, #00b894, #00cec9 90%);
+    color: #fff;
+}
+#payrollForm #saveBtn:hover {
+    filter: brightness(1.12);
+    box-shadow: 0 3px 14px 0 rgba(9, 132, 227, 0.17);
+    transform: translateY(-2px) scale(1.029);
+}
+#payrollForm #cancelBtn {
+    background: linear-gradient(90deg, #ff7675, #fd79a8 90%);
+    color: #fff;
+}
+#payrollForm #cancelBtn:hover {
+    filter: brightness(1.06);
+    box-shadow: 0 3px 14px 0 rgba(253, 121, 168, 0.13);
+    transform: translateY(-2px) scale(1.029);
+}
+
+/* SCROLLBAR */
+::-webkit-scrollbar {
+    height: 8px;
+    width: 8px;
+    background: #e3e9f1;
+    border-radius: 8px;
+}
+::-webkit-scrollbar-thumb {
+    background: #b2bec3;
+    border-radius: 8px;
+}
+
+/* RESPONSIVE TABLET */
+@media (max-width: 1100px) {
+    .container {
+        max-width: 98vw;
+        padding: 18px 2vw 24px 2vw;
+    }
+    .search-bar {
+        width: 90%;
+    }
+    #payrollForm {
+        max-width: 98vw;
+        padding: 18px 2vw 16px 2vw;
+    }
+}
+@media (max-width: 900px) {
+    h1 {
+        font-size: 2rem;
+    }
+    .container {
+        padding: 10px 1vw 18px 1vw;
+    }
+    .search, .search-bar-group, .action-buttons {
+        flex-direction: column;
+        gap: 10px;
+        align-items: stretch;
+    }
+    .search-bar {
+        width: 100%;
+    }
+    #payrollTable th, #payrollTable td {
+        padding: 10px 4px;
+        font-size: 0.99rem;
+    }
+}
+/* RESPONSIVE MOBILE */
+@media (max-width: 600px) {
+    .container {
+        max-width: 100vw;
+        padding: 6px 2vw 8px 2vw;
+        border-radius: 0;
+        box-shadow: none;
+    }
+    h1 {
+        font-size: 1.18rem;
+        margin-bottom: 16px;
+    }
+    .action-buttons {
+        flex-direction: column;
+        gap: 8px;
+        align-items: stretch;
+        margin-bottom: 10px;
+    }
+    .btn-excel, .btn-add, .btn-back, #payrollForm #saveBtn, #payrollForm #cancelBtn {
+        font-size: 0.94rem;
+        padding: 8px 0;
+        width: 100%;
+        border-radius: 16px;
+        min-width: 0;
+    }
+    .search {
+        justify-content: stretch;
+        margin-bottom: 10px;
+    }
+    .search-bar {
+        width: 100%;
+        min-width: 0;
+        border-radius: 14px;
+    }
+    .search-bar input[type="text"] {
+        font-size: 0.96rem;
+        padding: 9px 7px;
+    }
+    .search-bar button {
+        font-size: 0.97rem;
+        padding: 9px 12px;
+        border-radius: 0 14px 14px 0;
+    }
+    #payrollTable {
+        font-size: 0.92rem;
+        border-radius: 0;
+    }
+    #payrollTable th, #payrollTable td {
+        padding: 7px 2px;
+        font-size: 0.90rem;
+    }
+    #payrollForm {
+        max-width: 100vw;
+        padding: 10px 2vw 10px 2vw;
+        border-radius: 0;
+        box-shadow: none;
+    }
+    #payrollForm input[type="text"],
+    #payrollForm input[type="number"] {
+        font-size: 0.94rem;
+        padding: 7px 7px;
+        border-radius: 7px;
+    }
+}
+/* MOBILE TABLE SCROLL */
+@media (max-width: 600px) {
+    #payrollTable,
+    #payrollTable thead,
+    #payrollTable tbody,
+    #payrollTable th,
+    #payrollTable td,
+    #payrollTable tr {
+        display: block;
+        width: 100%;
+    }
+    #payrollTable thead tr {
+        display: none;
+    }
+    #payrollTable tr {
+        margin-bottom: 12px;
+        border-radius: 8px;
+        background: #f4f7fa;
+        box-shadow: 0 1px 6px 0 rgba(44,62,80,0.04);
+    }
+    #payrollTable td {
+        padding: 10px 6px;
+        text-align: left;
+        position: relative;
+        border-bottom: 1px solid #e5e7ea;
+        font-size: 0.95rem;
+    }
+    #payrollTable td:last-child {
+        border-bottom: none;
+    }
+    #payrollTable td:before {
+        content: attr(data-label);
+        font-weight: 600;
+        color: #2d3436;
+        display: block;
+        margin-bottom: 2px;
+        font-size: 0.86em;
+        opacity: 0.9;
+    }
+}

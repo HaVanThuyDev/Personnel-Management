@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Quản lý phòng ban</title>
+    <link rel="stylesheet" href="/templates/Css/departments.css">
+    <script src="/templates/Js/departments.js"></script>
+</head>
+<body>
+<h1>📋Phòng ban</h1>
+<button id="btnAddNew">➕ Thêm</button>
+<button class="btn-back" onclick="goBack()">🔙 Quay lại</button>
+<input type="text" id="searchInput" placeholder="🔍 Tìm kiếm phòng ban...">
+<table id="departmentTable">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Tên phòng ban</th>
+        <th>Quản lý</th>
+        <th>Hành động</th>
+    </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+<form id="departmentForm" style="display: none;">
+    <input type="hidden" id="departmentId">
+    <label for="departmentName">Tên phòng ban</label>
+    <input type="text" id="departmentName" placeholder="Tên phòng ban" required>
+    <label for="managerId">ID người quản lý</label>
+    <input type="text" id="managerId" placeholder="ID người quản lý">
+    <div class="form-buttons">
+        <button type="submit">💾 Lưu</button>
+        <button type="button" id="btnCancel">❌ Hủy</button>
+    </div>
+</form>
+</body>
+<script>
+    function goBack() {
+        const ref = document.referrer;
+
+        if (ref.includes("AdminHome.html")) {
+            window.location.href = "AdminHome.html";
+        } else if (ref.includes("ManagerHome.html")) {
+            window.location.href = "ManagerHome.html";
+        } else {
+            window.location.href = "login and register.html";
+        }
+    }
+</script>
+</html>

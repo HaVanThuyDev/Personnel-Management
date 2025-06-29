@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quản lý nhân viên</title>
+  <link rel="stylesheet" href="/templates/Css/Saff.css">
+  <script src="/templates/Js/Staff.js"></script>
+</head>
+<body>
+<h1>Quản lý Nhân viên</h1>
+
+<div class="search">
+  <input type="text" id="searchInput" placeholder="Tìm kiếm nhân viên..." oninput="searchEmployees()">
+  <button onclick="searchEmployees()">Tìm kiếm</button>
+</div>
+<div class="action-buttons">
+  <button id="btnAddNew">Thêm</button>
+  <button class="btn-export" onclick="exportToExcel()">Xuất Excel</button>
+  <button class="btn-back" onclick="goBack()">Quay lại</button>
+</div>
+<table>
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Họ tên</th>
+    <th>Địa chỉ</th>
+    <th>Ngày sinh</th>
+    <th>Email</th>
+    <th>Giới tính</th>
+    <th>Ngày làm</th>
+    <th>Điện thoại</th>
+    <th>Phòng ban</th>
+    <th>Tài khoản</th>
+    <th>Hành động</th>
+  </tr>
+  </thead>
+  <tbody id="tableBody">
+  </tbody>
+</table>
+<form id="employeeForm" style="display: none;">
+  <input type="hidden" id="employeeId">
+  <label for="fullName">Họ tên</label>
+  <input type="text" id="fullName" placeholder="Họ tên" required>
+  <label for="address">Địa chỉ</label>
+  <input type="text" id="address" placeholder="Địa chỉ">
+  <label for="dob">Ngày sinh</label>
+  <input type="date" id="dob">
+  <label for="email">Email</label>
+  <input type="email" id="email" placeholder="Email">
+  <label for="gender">Giới tính</label>
+  <select id="gender">
+    <option value="Nam">Nam</option>
+    <option value="Nữ">Nữ</option>
+  </select>
+  <label for="hireDate">Ngày làm</label>
+  <input type="date" id="hireDate">
+  <label for="phone">SĐT</label>
+  <input type="text" id="phone" placeholder="SĐT">
+  <label for="departmentId">ID Phòng ban</label>
+  <input type="text" id="departmentId" placeholder="ID Phòng ban">
+  <label for="userId">ID Tài khoản</label>
+  <input type="text" id="userId" placeholder="ID Tài khoản">
+  <div class="form-buttons">
+    <button type="submit">Lưu</button>
+    <button type="button" id="btnCancel">Hủy</button>
+  </div>
+</form>
+</body>
+</html>

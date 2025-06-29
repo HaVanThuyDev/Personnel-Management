@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payroll Management</title>
+    <link rel="stylesheet" href="/templates/Css/Payroll.css">
+    <script src="/templates/Js/Payroll.js"></script>
+</head>
+<body>
+<div class="container">
+    <h1>Bảng lương </h1>
+    <div class="search">
+        <form class="search-bar" onsubmit="event.preventDefault(); document.getElementById('searchBtn').click();">
+            <input type="text" id="searchInput" placeholder="Tìm kiếm.....!">
+            <button id="searchBtn" type="button"><span>Tìm kiếm</span></button>
+        </form>
+    </div>
+    <div class="action-buttons">
+        <button id="exportBtn" class="btn-excel">Xuất Excel</button>
+        <button id="btnAddNew" class="btn-add">Thêm mới</button>
+        <button class="btn-back" onclick="goBack()">Quay lại</button>
+    </div>
+    <table id="payrollTable">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>ID Nhân viên</th>
+            <th>Họ Và Tên</th>
+            <th>Tháng</th>
+            <th>Năm</th>
+            <th>Lương cơ bản</th>
+            <th>Lương tăng ca</th>
+            <th>Tổng Lương</th>
+            <th>Hành động</th>
+        </tr>
+        </thead>
+        <tbody id="payrollData">
+        </tbody>
+    </table>
+
+    <div id="payrollForm">
+        <h3>Add / Edit Payroll</h3>
+        <input type="text" id="payrollId" placeholder="ID (Edit Only)" hidden>
+        <input type="text" id="employeeId" placeholder=" ID Nhân viên">
+        <input type="text" id="fullName" placeholder=" Họ Và tên">
+        <input type="number" id="month" placeholder="Tháng">
+        <input type="text" id="year" placeholder="Năm">
+        <input type="text" id="basicSalary" placeholder="Lương cơ bản">
+        <input type="text" id="overtimePay" placeholder="Lương tăng ca">
+        <input type="text" id="finalSalary" placeholder="Tổng Lương">
+        <button id="saveBtn">Save</button>
+        <button id="cancelBtn">Hủy</button>
+    </div>
+</div>
+<script>
+    function goBack() {
+        const ref = document.referrer;
+
+        if (ref.includes("AdminHome.html")) {
+            window.location.href = "AdminHome.html";
+        } else if (ref.includes("AccountantHome.html")) {
+            window.location.href = "AccountantHome.html";
+        } else {
+            window.location.href = "login and register.html";
+        }
+    }
+</script>
+</body>
+</html>

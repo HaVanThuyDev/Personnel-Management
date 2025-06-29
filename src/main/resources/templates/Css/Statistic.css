@@ -1,0 +1,54 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+    padding: 20px;
+    margin: 0;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.top-charts {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.chart-card {
+    flex: 1;
+    min-width: 45%;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.chart-card h2 {
+    margin-bottom: 15px;
+    font-size: 18px;
+    color: #444;
+}
+
+.bottom-chart {
+    margin-top: 30px;
+}
+.bottom-chart {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.bottom-chart canvas {
+    max-width: 400px;
+    max-height: 400px;
+    margin: 0 auto;
+}
+
